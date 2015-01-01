@@ -33,18 +33,18 @@ print mcqueue.getTop() # just query the element, but pop it.
 
 <br/>
 mcLock使用例子：
+```python
+import memcache
+import mcLock
+mc = memcache.Client(["localhost:11211"])
+mc = mcLock.mcLock( mc , "your_project_name" )
+mc.lock()
 
-    import memcache
-    import mcLock
-    mc = memcache.Client(["localhost:11211"])
-    mc = mcLock.mcLock( mc , "your_project_name" )
-    mc.lock()
+mc.set('haha', "I'm Ysun Lin.")
+mc.get('haha')
+mc.add('shit', "I lost my love.")
+mc.delete('haha')
+mc.delete('shit')
 
-    mc.set('haha', "I'm Ysun Lin.")
-    mc.get('haha')
-    mc.add('shit', "I lost my love.")
-    mc.delete('haha')
-    mc.delete('shit')
-
-    mc.unlock()
-
+mc.unlock()
+```
