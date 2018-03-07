@@ -1,8 +1,10 @@
-#### mcQueue 为以 Python 和 memcache 为基础的 同步循环队列 ，可用于多线程和多进程读写同步。
+## mcQueue简介
 
-#### mcLock 为基于 memcache 实现的 全局同步锁 ，用于读写同步。
-<br/>
-mcQueue 使用例子：
+* mcQueue 为以 Python 和 memcache 为基础的 同步循环队列 ，可用于多线程和多进程读写同步。
+
+* mcLock 为基于 memcache 实现的 全局同步锁 ，用于读写同步。
+
+## mcQueue使用例子
 
 ```python
 import memcache
@@ -31,8 +33,8 @@ print mcqueue.popif(1)
 print mcqueue.getTop() # just query the element, but pop it.
 ```
 
-<br/>
-mcLock使用例子：
+## mcLock使用例子
+
 ```python
 import memcache
 import mcLock
